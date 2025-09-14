@@ -4,7 +4,7 @@
 </p>
 
 <h1 align="center" id="heading">Session 1: Introduction and Vibe Check</h1>
-
+ 
 ### [Quicklinks](https://github.com/AI-Maker-Space/AIE8/tree/main/00_AIM_Quicklinks)
 
 | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
@@ -37,15 +37,24 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner. 
-    - Aspect Tested:
+    - Aspect Tested: Technical concepts understanding
+    ![1](./images/1.png)
+
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - Aspect Tested: Summarization skills
+    ![1](./images/2.png)
+
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - Aspect Tested: Creativity
+    ![1](./images/3.png)
+
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - Aspect Tested: Logical reasoning / math skills
+    ![1](./images/4.png)
+
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+    - Aspect Tested: Rephrasing / style transformation
+    ![1](./images/5.png)
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
 
@@ -58,7 +67,7 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 #### ❓Question #1:
 
 What are some limitations of vibe checking as an evaluation tool?
-##### ✅ Answer:
+##### ✅ Answer: A limited number of possible inputs can be tested. There is no measurable performance value.
 
 ### 🚧 Advanced Build (OPTIONAL):
 
@@ -68,14 +77,19 @@ Please make adjustments to your application that you believe will improve the vi
 
 #### 🏗️ Activity #1
 ##### Adjustments Made:
-- _describe adjustment(s) here_
+- Add more context to system message
 
 ##### Results:
-1. _Comment here how the change(s) impacted the vibe check of your system_
-2. 
-3. 
-4. 
-5.
+1. The llm response is more detailed. Example and summary are provided.
+![1](./images/1-improved.png)
+2. No major differences with the original 'no context' response.
+![1](./images/2-improved.png)
+3. The llm has more structured story (beginning -> middle -> end)
+![1](./images/3-improved.png)
+4. More structured and concise response. Llm avoids escape characters bugs in the output window.
+![1](./images/4-improved.png)
+5.The llm does not add official letter elements, transforms only message
+![1](./images/5-improved.png)
 
 
 ## Submitting Your Homework
