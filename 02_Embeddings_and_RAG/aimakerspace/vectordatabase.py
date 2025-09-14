@@ -4,6 +4,9 @@ from typing import List, Tuple, Callable
 from aimakerspace.openai_utils.embedding import EmbeddingModel
 import asyncio
 
+def euclidean_distance(vector_a: np.array, vector_b: np.array) -> float:
+    """Computes the euclidean distance between two vectors."""
+    return np.linalg.norm(vector_a - vector_b)
 
 def cosine_similarity(vector_a: np.array, vector_b: np.array) -> float:
     """Computes the cosine similarity between two vectors."""
@@ -37,9 +40,17 @@ class VectorDatabase:
         self,
         query_text: str,
         k: int,
-        distance_measure: Callable = cosine_similarity,
+        distance_measure: str = "cosine",
         return_as_text: bool = False,
     ) -> List[Tuple[str, float]]:
+
+        if distance_measure == "cosine":
+            distance_measure = cosine_similarity
+        elif distance_measure == "euclidean":
+            distance_measure = euclidean_distance
+        else:
+            raise ValueError(f"Invalid distance measure: {distance_measure}")
+
         query_vector = self.embedding_model.get_embedding(query_text)
         results = self.search(query_vector, k, distance_measure)
         return [result[0] for result in results] if return_as_text else results

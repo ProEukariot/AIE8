@@ -1,5 +1,51 @@
 import os
 from typing import List
+import PyPDF2
+
+class PDFLoader:
+    def __init__(self, path: str):
+        self.documents = []
+        self.path = path
+
+    def _read_pdf(self, file_path: str):
+        """Helper method to read a single PDF file and return its text."""
+        try:
+            with open(file_path, "rb") as file:
+                reader = PyPDF2.PdfReader(file)
+
+                pdf_text = ""
+                for page in reader.pages:
+                    text = page.extract_text()
+                    if text:
+                        pdf_text += text
+                return pdf_text
+
+        except Exception as e:
+            print(f"Error reading PDF {file_path}: {e}")
+            return ""
+
+    def load(self):
+        if os.path.isdir(self.path):
+            self.load_directory()
+        elif os.path.isfile(self.path) and self.path.lower().endswith(".pdf"):
+            self.documents.append(self._read_pdf(self.path))
+        else:
+            raise ValueError(
+                "Provided path is neither a valid directory nor a .pdf file."
+            )
+
+    def load_directory(self):
+        for root, _, files in os.walk(self.path):
+            for file in files:
+                if file.lower().endswith(".pdf"):
+                    file_path = os.path.join(root, file)
+                    pdf_content = self._read_pdf(file_path)
+                    if pdf_content:
+                        self.documents.append(pdf_content)
+
+    def load_documents(self):
+        self.load()
+        return self.documents
 
 
 class TextFileLoader:
@@ -34,6 +80,9 @@ class TextFileLoader:
     def load_documents(self):
         self.load()
         return self.documents
+
+
+
 
 
 class CharacterTextSplitter:
