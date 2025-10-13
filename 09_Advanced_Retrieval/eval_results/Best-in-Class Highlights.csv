@@ -1,0 +1,7 @@
+Metric,Best Retriever,Value,Interpretation
+Context Precision,compression,1.00,Excellent at ensuring all retrieved context is relevant.
+Context Recall,"compression, naive, ensemble",1.00,Excellent at retrieving all the relevant chunks needed to answer the question.
+Answer Relevancy,bm25,0.9483,The answers generated are the most relevant to the original query.
+Faithfulness,multi_query,0.9756,The answers generated are the most grounded in the retrieved context.
+Latency,parent_document,1.2477 s,The fastest retriever.
+Cost,parent_document,$0.000362,The most cost-efficient (lowest token count).
