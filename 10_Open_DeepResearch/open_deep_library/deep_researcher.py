@@ -1,4 +1,7 @@
 """Main LangGraph implementation for the Deep Research agent."""
+from dotenv import find_dotenv, load_dotenv
+
+load_dotenv(find_dotenv(), override=False)
 
 import asyncio
 from typing import Literal

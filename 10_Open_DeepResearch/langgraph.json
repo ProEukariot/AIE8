@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "dependencies": ["."],
+    "env": ".env",
+    "python_version": "3.13",
+    "graphs": {
+      "open_deep_research": "open_deep_library.deep_researcher:deep_researcher"
+    },
+    "assistants": {
+      "deep_researcher": {
+        "graph_id": "open_deep_research",
+        "name": "Deep Researcher",
+        "description": "A deep research agent that can be used to research a given topic."
+      }
+    }
+  }
+  
+  
