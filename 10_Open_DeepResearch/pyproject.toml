@@ -47,6 +47,8 @@ dependencies = [
     "jupyter>=1.1.1",
     "pypdf>=6.1.1",
     "pypdf2>=3.0.1",
+    "langgraph-cli[inmem]>=0.3.6",
+    "langgraph-sdk>=0.1.38",
 ]
 
 [project.optional-dependencies]
