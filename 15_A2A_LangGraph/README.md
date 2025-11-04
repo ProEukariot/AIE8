@@ -89,6 +89,8 @@ What are the core components of an `AgentCard`?
 
 ##### ✅ Answer:
 
+Agent name, description, url where it's served, input/output supported formats, and skills + capabilities 
+
 <br />
 
 ### ❓ Question #2:
@@ -96,6 +98,8 @@ What are the core components of an `AgentCard`?
 Why is A2A (and other such protocols) important in your own words?
 
 ##### ✅ Answer:
+
+A2A (and other such protocols like MCP) allows to build distributed agentic systems with standardized protocols. Pretty much the same idea as in microservices
 
 <br /><br />
 
